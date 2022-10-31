@@ -25,7 +25,10 @@ class Author
     all_authors_magazines.uniq
   end
 
-
+  # given a magazine and a title, creates a new article instance and assoiats ot with the author of that magazine
+  def add_article(magazine, title)
+    Article.create(self, magazine, title)
+  end
 
 
   
