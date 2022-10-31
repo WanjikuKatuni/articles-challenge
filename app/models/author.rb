@@ -30,6 +30,11 @@ class Author
     Article.create(self, magazine, title)
   end
 
+  # unique array with the categories of magazines the author has contributed to
+  def topic_areas
+    magazines.collect{|magazine| magazine.category}.uniq
+  end
+
 
   
 
