@@ -14,7 +14,10 @@ class Author
     @@all
   end
 
-  
+# returns an array of article instances the author has written
+  def articles
+    Article.all.select{|article| article.author == self.name}
+  end
 
 
 
