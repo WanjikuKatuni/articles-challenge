@@ -29,10 +29,16 @@ class Magazine
 
   # returns first object that matches the name
   def self.find_by_name(name)
+
     find_magazines = self.all.find do |magazine| 
       magazine.name == name}
     end
     
+  end
+
+  # array of strings of titles of all articles wrtiten for the magazine
+  def article_titles
+    get_articles.collect{|article| article.title} 
   end
 
 
