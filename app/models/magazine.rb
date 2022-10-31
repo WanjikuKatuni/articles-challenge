@@ -27,5 +27,13 @@ class Magazine
     
   end
 
+  # returns first object that matches the name
+  def self.find_by_name(name)
+    find_magazines = self.all.find do |magazine| 
+      magazine.name == name}
+    end
+    
+  end
+
 
 end
