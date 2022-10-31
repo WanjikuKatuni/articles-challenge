@@ -31,7 +31,7 @@ class Magazine
   def self.find_by_name(name)
 
     find_magazines = self.all.find do |magazine| 
-      magazine.name == name}
+      magazine.name == name
     end
     
   end
