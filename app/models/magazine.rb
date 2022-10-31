@@ -41,5 +41,19 @@ class Magazine
     get_articles.collect{|article| article.title} 
   end
 
+  # returns array of authors who have written more than 2 articles for the magazine
+  def contributing_authors
+    # array of authors writtenmore than 2 articles
+    top_authors = []
+    # get authots
+    magazine_authros = get_articles.collect{|article| article.author}.uniq
+    # tally the authors
+    magazine_authros.tally.each do |key,value|
+      values > 2 && (top_authors << key)
+    end
+    top_authors
+
+  end
+
 
 end
