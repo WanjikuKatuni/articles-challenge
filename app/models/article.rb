@@ -20,5 +20,9 @@ class Article
         @@all
     end
 
+    def author
+        @author.name
+    end
+
 
 end
