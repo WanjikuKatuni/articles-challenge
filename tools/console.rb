@@ -7,20 +7,20 @@ end
 
 ###  WRITE YOUR TEST CODE HERE ###
 
-# americanah = Author.new("Chimamanda Ngozi")
-# half_of_a_yellow_sun = Author.new("Chimamanda Ngozi")
-sex_lives_of_african_women = Author.new("Nana Darkoa")
+author_1 = Author.new("Yaaa ayosi")
+author_2= Author.new("Chimamanda Ngozi")
+author_3= Author.new("Nana Darkoa")
 
-readers_digest = Magazine.new("readers digest", "african_stories")
-all_african = Magazine.new("all_African", "history")
-african_women = Magazine.new("african women", "women stories")
+mag_1= Magazine.new("readers digest", "african_stories")
+mag_2= Magazine.new("all_African", "history")
+mag_3 = Magazine.new("african women", "women stories")
 
-article_1 = Article.new(article1, readers_digest, "homegoing")
-article_2 = Article.new(article2, readers_digest, "wahala")
+article_1 = Article.new(author_1, mag_1, "homegoing")
+article_2 = Article.new(author_2, mag_2, "americannah")
+article_3 = Article.new(author_3, mag_3, "wahala")
 
-
-sex_lives_of_african_women.add_article(readers_digest, "half a yellow sun")
-sex_lives_of_african_women.add_article(readers_digest, "americannah")
+author_2.add_article(mag_2, "half a yellow sun")
+author_2.add_article(mag_2, "new book")
 
 
 

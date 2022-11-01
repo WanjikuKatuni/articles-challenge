@@ -27,7 +27,7 @@ class Author
 
   # given a magazine and a title, creates a new article instance and assoiats ot with the author of that magazine
   def add_article(magazine, title)
-    Article.create(self, magazine, title)
+    Article.new(self, magazine, title)
   end
 
   # unique array with the categories of magazines the author has contributed to
