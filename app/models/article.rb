@@ -20,13 +20,5 @@ class Article
         @@all
     end
 
-    def author
-        @author.name
-    end
-
-    def magazine
-        @magazine.name
-    end
-
 
 end
