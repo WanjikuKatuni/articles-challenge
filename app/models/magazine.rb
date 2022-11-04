@@ -14,7 +14,7 @@ class Magazine
   end
 
   def self.all
-    @@all << self
+    @@all 
   end
 
   # return an array of author isntances who have written for the magazine.
@@ -43,16 +43,13 @@ class Magazine
 
   # returns array of authors who have written more than 2 articles for the magazine
   def contributing_authors
-    # array of authors writtenmore than 2 articles
-    top_authors = []
+    
     # get authots
-    magazine_authros = get_articles.collect{|article| article.author}.uniq
+    magazine_authros = get_articles.collect{|article| article.author.name}
     # tally the authors
     magazine_authros.tally.each do |key,value|
-      values > 2 && (top_authors << key)
-    end
-    top_authors
-
+      values > 2
+    magazine_authros
   end
 
 
