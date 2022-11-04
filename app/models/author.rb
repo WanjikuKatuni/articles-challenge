@@ -8,9 +8,6 @@ class Author
   
   end
 
-  def self.all
-    @@all
-  end
 
 # returns an array of article instances the author has written
   def articles

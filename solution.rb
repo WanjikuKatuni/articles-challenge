@@ -2,21 +2,17 @@
 
 
 # author
+
 class Author
 
   attr_reader :name
 
-  @@all = []
 
   def initialize(name)
     @name = name
-    @@all << self
   
   end
 
-  def self.all
-    @@all
-  end
 
 # returns an array of article instances the author has written
   def articles
@@ -45,71 +41,67 @@ class Author
 
 end
 
-  
-
 
 
 #   magazine
 
+
 class Magazine
-    attr_accessor :name, :category
-  
-  
-    @@all = []
-  
-    def initialize(name, category)
-      @name = name
-      @category = category
-  
-      # return array of magazine instances
-      @@all << self
-  
-    end
-  
-    def self.all
-      @@all << self
-    end
-  
-    # return an array of author isntances who have written for the magazine.
-    def get_articles
-      Article.all.select{|article| article.magazine.name == self.name}
-    end
-  
-    def contributors
-      get_articles.collect{|article| article.author}.uniq
-      
-    end
-  
-    # returns first object that matches the name
-    def self.find_by_name(name)
-  
-      find_magazines = self.all.find do |magazine| 
-        magazine.name == name
-      end
-      
-    end
-  
-    # array of strings of titles of all articles wrtiten for the magazine
-    def article_titles
-      get_articles.collect{|article| article.title} 
-    end
-  
-    # returns array of authors who have written more than 2 articles for the magazine
-    def contributing_authors
-      # array of authors writtenmore than 2 articles
-      top_authors = []
-      # get authots
-      magazine_authros = get_articles.collect{|article| article.author}.uniq
-      # tally the authors
-      magazine_authros.tally.each do |key,value|
-        values > 2 && (top_authors << key)
-      end
-      top_authors
-  
-    end
-  
-  
+  attr_accessor :name, :category
+
+
+  @@all = []
+
+  def initialize(name, category)
+    @name = name
+    @category = category
+
+    # return array of magazine instances
+    @@all << self
+
   end
+
+  def self.all
+    @@all 
+  end
+
+  # return an array of author isntances who have written for the magazine.
+  def get_articles
+    Article.all.select{|article| article.magazine.name == self.name}
+  end
+
+  def contributors
+    get_articles.collect{|article| article.author}.uniq
+    
+  end
+
+  # returns first object that matches the name
+  def self.find_by_name(name)
+
+    find_magazines = self.all.find do |magazine| 
+      magazine.name == name
+    end
+    
+  end
+
+  # array of strings of titles of all articles wrtiten for the magazine
+  def article_titles
+    get_articles.collect{|article| article.title} 
+  end
+
+  # returns array of authors who have written more than 2 articles for the magazine
+  def contributing_authors
+    
+    # get authots
+    magazine_authros = get_articles.collect{|article| article.author.name}
+    # tally the authors
+    magazine_authros.tally.each do |key,value|
+      values > 2
+    magazine_authros
+  end
+
+
+end
 
   
 
@@ -117,35 +109,25 @@ class Magazine
 
 class Article
 
-    attr_reader :author, :magazine, :title
+  attr_reader :author, :magazine, :title
 
-    # array of all article instances
+  # array of all article instances
 
-    @@all = []
+  @@all = []
 
-    def initialize(author, magazine, title)
+  def initialize(author, magazine, title)
 
-        @author = author
-        @magazine = magazine
-        @title = title
+      @author = author
+      @magazine = magazine
+      @title = title
 
-        # sends all instances to array
-        @@all << self
-    end
+      # sends all instances to array
+      @@all << self
+  end
 
-    def self.all
-        @@all
-    end
-
-    def author
-        @author.name
-    end
-
-    def magazine
-        @magazine.name
-    end
+  def self.all
+      @@all
+  end
 
 
 end
-
-
